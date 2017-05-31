@@ -1,8 +1,8 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import Tkinter as Tk
 import ttk
-from datasource import MongoDataSource
-from exporter import ExcelExporter
-
 
 class App(object):
     def __init__(self, master, datasource, exporter):
@@ -46,8 +46,3 @@ class App(object):
         self.collection_combobox['values'] = self.datasource.get_collections(database_name)
         self.collection_combobox.current(0)
         self.button['state'] = Tk.NORMAL
-
-
-window = Tk.Tk()
-App(window, MongoDataSource(), ExcelExporter())
-window.mainloop()
